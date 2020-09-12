@@ -18,6 +18,8 @@ enum class Denomination {
     unknown = 99
 };
 
+QString detorminationToString(Denomination denomination);
+
 enum class Suit {
     hearts   = 1, //черви
     diamonds = 2, //бубны
@@ -25,6 +27,8 @@ enum class Suit {
     clubs    = 4, //трефы
     unknown = 99
 };
+
+QString suitToString(Suit suit);
 
 class Card : public QObject
 {
@@ -34,10 +38,12 @@ public:
     explicit Card(Denomination denomination, Suit suit, QObject *parent = nullptr);
     Denomination getDenomination();
     Suit getSuit();
+    QString getTextCard();
+
     Card(const Card &card);
     Card &operator=(const Card&);
     friend QDebug operator<<(QDebug dbg, const Card &card) {
-        dbg.nospace() << static_cast<int>(card.currentDenomination_) << " " << static_cast<int>(card.currentSuit_);
+        dbg.nospace() << detorminationToString(card.currentDenomination_) + " of " + suitToString(card.currentSuit_);
         return dbg.space();
     }
 

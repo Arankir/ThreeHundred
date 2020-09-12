@@ -16,10 +16,69 @@ Suit Card::getSuit() {
     return currentSuit_;
 }
 
+QString Card::getTextCard() {
+    return detorminationToString(currentDenomination_) + " of " + suitToString(currentSuit_);
+}
+
 Card::Card(const Card &aCard) : QObject(aCard.parent()), currentDenomination_(aCard.currentDenomination_), currentSuit_(aCard.currentSuit_) {
 
 }
 
 Card &Card::operator=(const Card &) {
     return *this;
+}
+
+QString detorminationToString(Denomination aDenomination) {
+    switch (aDenomination) {
+    case Denomination::six: {
+        return "six";
+    }
+    case Denomination::seven: {
+        return "seven";
+    }
+    case Denomination::eight: {
+        return "eight";
+    }
+    case Denomination::nine: {
+        return "nine";
+    }
+    case Denomination::ten: {
+        return "ten";
+    }
+    case Denomination::will: {
+        return "will";
+    }
+    case Denomination::lady: {
+        return "lady";
+    }
+    case Denomination::king: {
+        return "king";
+    }
+    case Denomination::ace: {
+        return "ace";
+    }
+    default: {
+        return "unknown";
+    }
+    }
+}
+
+QString suitToString(Suit aSuit) {
+    switch (aSuit) {
+    case Suit::hearts: {
+        return "hearts";
+    }
+    case Suit::diamonds: {
+        return "diamonds";
+    }
+    case Suit::spades: {
+        return "spades";
+    }
+    case Suit::clubs: {
+        return "clubs";
+    }
+    default: {
+        return "unknown";
+    }
+    }
 }
