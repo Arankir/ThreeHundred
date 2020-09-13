@@ -39,6 +39,7 @@ public:
     Denomination getDenomination();
     Suit getSuit();
     QString getTextCard();
+    int getCardScore();
 
     Card(const Card &card);
     Card &operator=(const Card&);

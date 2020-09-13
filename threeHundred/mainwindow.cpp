@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     initDeck();
     for (auto card: deck_) {
-        qDebug()<<card;
+        qDebug()<<card<< card.getCardScore();
     }
 }
 

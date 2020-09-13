@@ -20,7 +20,49 @@ QString Card::getTextCard() {
     return detorminationToString(currentDenomination_) + " of " + suitToString(currentSuit_);
 }
 
-Card::Card(const Card &aCard) : QObject(aCard.parent()), currentDenomination_(aCard.currentDenomination_), currentSuit_(aCard.currentSuit_) {
+int Card::getCardScore() {
+    switch (currentDenomination_) {
+    case Denomination::six: {
+        return 6;
+    }
+    case Denomination::seven: {
+        return 7;
+    }
+    case Denomination::eight: {
+        return 8;
+    }
+    case Denomination::nine: {
+        return 9;
+    }
+    case Denomination::ten: {
+        return 10;
+    }
+    case Denomination::will: {
+        return 2;
+    }
+    case Denomination::lady: {
+        return 30;
+    }
+    case Denomination::king: {
+        switch (currentSuit_) {
+        case Suit::spades: {
+            return 40;
+        }
+        default: {
+            return 4;
+        }
+        }
+    }
+    case Denomination::ace: {
+        return 11;
+    }
+    default: {
+        return 0;
+    }
+    }
+}
+
+Card::Card(const Card &aCard) : QObject(aCard.parent()), currentDenomination_(aCard.currentDenomination_), currentSuit_(aCard.currentSuit_), currentImage_(aCard.currentImage_) {
 
 }
 
