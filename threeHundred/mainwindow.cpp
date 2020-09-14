@@ -3,9 +3,11 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    std::srand(std::time(nullptr));
     initDeck();
+    shuffleDeck();
     for (auto card: deck_) {
-        qDebug()<<card<< card.getCardScore();
+        qDebug() << card << card.getCardScore() << card.getPixmap();
     }
 }
 
@@ -21,10 +23,10 @@ void MainWindow::initDeck() {
             deck_.append(std::move(newCard));
         }
     }
-    deck_.resize(36);
 }
 
 void MainWindow::shuffleDeck() {
-    //Помешать колоду
+    for (int index = 0; index < 36; index++) {
+        std::swap(deck_[index], deck_[std::rand() % 36]);
+    }
 }
-

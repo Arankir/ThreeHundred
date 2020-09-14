@@ -1,11 +1,11 @@
 #include "card.h"
 
-Card::Card(QObject *aParent) : Card(Denomination::unknown, Suit::unknown, aParent) {
+Card::Card(QObject *aParent) : QObject(aParent), currentDenomination_(Denomination::unknown), currentSuit_(Suit::unknown), currentImage_(QPixmap()) {
 
 }
 
 Card::Card(Denomination aDenomination, Suit aSuit, QObject *aParent) : QObject(aParent), currentDenomination_(aDenomination), currentSuit_(aSuit) {
-    //Присваение картинки
+    currentImage_ = QPixmap("://" + suitToString(currentSuit_) + "/" + denominationToString(currentDenomination_) + ".png");
 }
 
 Denomination Card::getDenomination() {
@@ -17,7 +17,7 @@ Suit Card::getSuit() {
 }
 
 QString Card::getTextCard() {
-    return detorminationToString(currentDenomination_) + " of " + suitToString(currentSuit_);
+    return denominationToString(currentDenomination_) + " of " + suitToString(currentSuit_);
 }
 
 int Card::getCardScore() {
@@ -66,11 +66,18 @@ Card::Card(const Card &aCard) : QObject(aCard.parent()), currentDenomination_(aC
 
 }
 
-Card &Card::operator=(const Card &) {
+Card &Card::operator=(const Card &aCard) {
+    currentSuit_            = aCard.currentSuit_;
+    currentDenomination_    = aCard.currentDenomination_;
+    currentImage_           = aCard.currentImage_;
     return *this;
 }
 
-QString detorminationToString(Denomination aDenomination) {
+QPixmap Card::getPixmap() {
+    return currentImage_;
+}
+
+QString denominationToString(Denomination aDenomination) {
     switch (aDenomination) {
     case Denomination::six: {
         return "six";

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <class/card.h>
+#include <class/player.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +21,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QVector<Card> deck_;
+    QList<Card> deck_;
+    QList<Player> players_;
+    Player currentPlayer_;
+
+    //класс настроек
+
+    //класс игры с модификациями
 
 };
 #endif // MAINWINDOW_H
