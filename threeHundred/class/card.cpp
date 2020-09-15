@@ -62,6 +62,10 @@ int Card::getCardScore() {
     }
 }
 
+QPixmap Card::getPixmap() {
+    return currentImage_;
+}
+
 Card::Card(const Card &aCard) : QObject(aCard.parent()), currentDenomination_(aCard.currentDenomination_), currentSuit_(aCard.currentSuit_), currentImage_(aCard.currentImage_) {
 
 }
@@ -71,10 +75,6 @@ Card &Card::operator=(const Card &aCard) {
     currentDenomination_    = aCard.currentDenomination_;
     currentImage_           = aCard.currentImage_;
     return *this;
-}
-
-QPixmap Card::getPixmap() {
-    return currentImage_;
 }
 
 QString denominationToString(Denomination aDenomination) {

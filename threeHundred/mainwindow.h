@@ -18,10 +18,13 @@ public:
     ~MainWindow();
     void initDeck();
     void shuffleDeck();
+    void shuffleStackToDeck();
+    void takeCard(Player &player);
 
 private:
     Ui::MainWindow *ui;
     QList<Card> deck_;
+    QList<Card> stackedCard_;
     QList<Player> players_;
     Player currentPlayer_;
 
