@@ -6,6 +6,7 @@
 
 #include <class/card.h>
 #include <class/player.h>
+#include <class/deck.h>
 
 enum class Modes {
     tenContinuous,
@@ -14,14 +15,11 @@ enum class Modes {
     shuffleStackedMultiplication
 };
 
-class Game : public QGraphicsView
+class Game : public QGraphicsScene
 {
     Q_OBJECT
 public:
     Game(QList<Modes> modes, QList<Player> players);
-    void initDeck();
-    void shuffleDeck();
-    void shuffleStackToDeck();
     void takeCard(Player &player);
 
     void addPlayer(Player player);
@@ -32,10 +30,11 @@ private:
     bool kingOfSpadesGiveAll_;
     bool shuffleStackedMultiplication_;
 
-    QList<Card> deck_;
-    QList<Card> stackedCard_;
+    //QList<Card> deck_;
+    //QList<Card> stackedCard_;
     QList<Player> players_;
     Player currentPlayer_;
+    Deck deck_;
 };
 
 #endif // GAME_H

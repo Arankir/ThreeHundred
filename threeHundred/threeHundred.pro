@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     class/card.cpp \
+    class/deck.cpp \
     class/player.cpp \
     graphicsClass/game.cpp \
     main.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     class/card.h \
+    class/deck.h \
     class/player.h \
     graphicsClass/game.h \
     mainwindow.h

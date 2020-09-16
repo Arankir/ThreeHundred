@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QGraphicsItem>
+#include <QPainter>
 
 enum class Denomination {
     six     = 6,

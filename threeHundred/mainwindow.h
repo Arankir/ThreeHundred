@@ -3,25 +3,28 @@
 
 #include <QMainWindow>
 #include <graphicsClass/game.h>
+#include <class/card.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QGraphicsView
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(int widht, int height);
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
-
+    void mainInit();
     //класс настроек
 
     //класс игры с модификациями
+
+    Game *game;
+    Card *card;
 
 };
 #endif // MAINWINDOW_H
