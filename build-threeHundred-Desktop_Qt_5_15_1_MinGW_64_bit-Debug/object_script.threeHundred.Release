@@ -1,0 +1,10 @@
+release/card.o
+release/player.o
+release/game.o
+release/main.o
+release/mainwindow.o
+release/qrc_res_cards.o
+release/moc_card.o
+release/moc_player.o
+release/moc_game.o
+release/moc_mainwindow.o

@@ -45,6 +45,54 @@ public:
     Card(const Card &card);
     Card &operator=(const Card&);
     friend QDebug operator<<(QDebug dbg, const Card &card) {
+//        switch (card.currentSuit_) {
+//        case Suit::hearts: {
+//            dbg.nospace() <<"♥";
+//        }
+//        case Suit::diamonds: {
+//            dbg.nospace() <<"♦";
+//        }
+//        case Suit::spades: {
+//            dbg.nospace() <<"♠";
+//        }
+//        case Suit::clubs: {
+//            dbg.nospace() <<"♣";
+//        }
+//        default: {
+//        }
+//        }
+
+//        switch (card.currentDenomination_) {
+//        case Denomination::six: {
+//            dbg.nospace() <<"6";
+//        }
+//        case Denomination::seven: {
+//            dbg.nospace() <<"7";
+//        }
+//        case Denomination::eight: {
+//            dbg.nospace() <<"8";
+//        }
+//        case Denomination::nine: {
+//            dbg.nospace() <<"9";
+//        }
+//        case Denomination::ten: {
+//            dbg.nospace() <<"10";
+//        }
+//        case Denomination::will: {
+//            dbg.nospace() <<"J";
+//        }
+//        case Denomination::lady: {
+//            dbg.nospace() <<"Q";
+//        }
+//        case Denomination::king: {
+//            dbg.nospace() <<"K";
+//        }
+//        case Denomination::ace: {
+//            dbg.nospace() <<"A";
+//        }
+//        default: {
+//        }
+//        }
         dbg.nospace() << denominationToString(card.currentDenomination_) + " of " + suitToString(card.currentSuit_);
         return dbg.space();
     }

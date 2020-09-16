@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <class/card.h>
-#include <class/player.h>
+#include <graphicsClass/game.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,17 +15,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void initDeck();
-    void shuffleDeck();
-    void shuffleStackToDeck();
-    void takeCard(Player &player);
 
 private:
     Ui::MainWindow *ui;
-    QList<Card> deck_;
-    QList<Card> stackedCard_;
-    QList<Player> players_;
-    Player currentPlayer_;
 
     //класс настроек
 

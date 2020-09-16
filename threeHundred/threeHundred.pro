@@ -18,12 +18,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     class/card.cpp \
     class/player.cpp \
+    graphicsClass/game.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     class/card.h \
     class/player.h \
+    graphicsClass/game.h \
     mainwindow.h
 
 FORMS += \
