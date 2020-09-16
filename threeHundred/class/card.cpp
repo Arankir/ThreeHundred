@@ -8,6 +8,18 @@ Card::Card(Denomination aDenomination, Suit aSuit, QObject *aParent) : QObject(a
     currentImage_ = QPixmap("://" + suitToString(currentSuit_) + "/" + denominationToString(currentDenomination_) + ".png");
 }
 
+QRectF Card::boundingRect() const {
+
+}
+
+void Card::paint(QPainter *aPainter, const QStyleOptionGraphicsItem *aOption, QWidget *aWidget) {
+
+}
+
+void Card::setRect(QRectF aRect) {
+
+}
+
 Denomination Card::getDenomination() {
     return currentDenomination_;
 }

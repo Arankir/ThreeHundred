@@ -1,0 +1,26 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <graphicsClass/game.h>
+#include <QGraphicsScene>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QGraphicsView
+{
+    Q_OBJECT
+
+public:
+    MainWindow();
+    ~MainWindow();
+
+private:
+    //класс настроек
+
+    //класс игры с модификациями
+
+};
+#endif // MAINWINDOW_H

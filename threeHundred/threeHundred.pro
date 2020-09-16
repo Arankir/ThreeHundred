@@ -28,8 +28,7 @@ HEADERS += \
     graphicsClass/game.h \
     mainwindow.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 TRANSLATIONS += \
     threeHundred_ru_RU.ts

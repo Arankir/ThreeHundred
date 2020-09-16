@@ -33,7 +33,7 @@ void Game::initDeck() {
     deck_.clear();
     for (int suit = 1; suit <= 4; suit++) {
         for (int denomination = 6; denomination <= 14; denomination++) {
-            Card newCard(static_cast<Denomination>(denomination), static_cast<Suit>(suit));
+            Card newCard(static_cast<Denomination>(denomination), static_cast<Suit>(suit), this);
             deck_.append(std::move(newCard));
         }
     }

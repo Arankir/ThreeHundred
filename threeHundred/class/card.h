@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QPixmap>
 #include <QDebug>
+#include <QGraphicsItem>
 
 enum class Denomination {
     six     = 6,
@@ -30,12 +31,18 @@ enum class Suit {
 
 QString suitToString(Suit suit);
 
-class Card : public QObject
+class Card : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:
     Card(QObject *parent = nullptr);
     explicit Card(Denomination denomination, Suit suit, QObject *parent = nullptr);
+
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
+
+    void setRect(QRectF rect);
+
     Denomination getDenomination();
     Suit getSuit();
     QString getTextCard();
