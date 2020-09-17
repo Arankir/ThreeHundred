@@ -2,7 +2,8 @@
 #define PLAYER_H
 
 #include <QObject>
-#include <class/card.h>
+
+#include <graphics/graphicsItems/card.h>
 
 class Player : public QObject
 {

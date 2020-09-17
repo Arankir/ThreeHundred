@@ -2,8 +2,7 @@
 #include "ui_mainwindow.h"
 
 
-MainWindow::MainWindow(int widht, int height)
-{
+MainWindow::MainWindow(int aWidth, int aHeight) {
     std::srand(std::time(nullptr));
     QList<Modes> listModes;
     QList<Player> players;
@@ -15,12 +14,12 @@ MainWindow::MainWindow(int widht, int height)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
-    setWindowTitle("300");
+    setWindowTitle("Threehundred");
 
     setFrameStyle(0);
-    setSceneRect(0,0, widht, height);
+    setSceneRect(0, 0, aWidth, aHeight);
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
-    setFixedSize(widht,height);
+    setFixedSize(aWidth, aHeight);
 
     this->game = new Game(listModes, players);
     setScene(game);
@@ -31,7 +30,6 @@ MainWindow::~MainWindow() {
 
 }
 
-void MainWindow::mainInit()
-{
+void MainWindow::mainInit() {
 
 }

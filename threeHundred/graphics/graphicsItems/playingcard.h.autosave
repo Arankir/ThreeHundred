@@ -1,0 +1,17 @@
+#ifndef PLAYINGCARD_H
+#define PLAYINGCARD_H
+
+#include <QObject>
+#include <QGraphicsItem>
+
+class PlayingCard : public QObject, public QGraphicsItem
+{
+    Q_OBJECT
+public:
+    explicit PlayingCard(QObject *parent = nullptr);
+
+signals:
+
+};
+
+#endif // PLAYINGCARD_H

@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <graphicsClass/game.h>
-#include <class/card.h>
+#include <graphics/game.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,7 +13,7 @@ class MainWindow : public QGraphicsView
     Q_OBJECT
 
 public:
-    MainWindow(int widht, int height);
+    MainWindow(int width, int height);
     ~MainWindow();
 
 private:
