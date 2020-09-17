@@ -17,19 +17,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     class/player.cpp \
+    class/roundresult.cpp \
     graphics/game.cpp \
     graphics/graphicsItems/card.cpp \
     graphics/graphicsItems/deck.cpp \
     graphics/graphicsItems/playedcards.cpp \
+    graphics/graphicsItems/scores.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     class/player.h \
+    class/roundresult.h \
     graphics/game.h \
     graphics/graphicsItems/card.h \
     graphics/graphicsItems/deck.h \
     graphics/graphicsItems/playedcards.h \
+    graphics/graphicsItems/scores.h \
     mainwindow.h
 
 FORMS +=

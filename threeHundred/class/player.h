@@ -12,6 +12,7 @@ public:
     Player(QObject *parent = nullptr);
     explicit Player(QString nickName, QPixmap avatar, QString ip, QObject *parent = nullptr);
     void setNickName(QString nickName);
+    const QString getNickName() const;
 
     void setPlayerScore(int score);
     int getPlayerScore();

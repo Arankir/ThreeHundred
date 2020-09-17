@@ -12,6 +12,10 @@ void Player::setNickName(QString aNickName) {
     nickName_ = aNickName;
 }
 
+const QString Player::getNickName() const {
+    return nickName_;
+}
+
 void Player::setPlayerScore(int aScore) {
     playerScore_ = aScore;
 }
