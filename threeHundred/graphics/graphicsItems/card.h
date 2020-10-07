@@ -6,6 +6,14 @@
 #include <QDebug>
 #include <QGraphicsItem>
 #include <QPainter>
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsSceneHoverEvent>
+#include <QApplication>
+#include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
+#include <QTimer>
+#include <QGraphicsBlurEffect>
+#include <QRandomGenerator>
 
 enum class Denomination {
     six     = 6,
@@ -13,8 +21,8 @@ enum class Denomination {
     eight   = 8,
     nine    = 9,
     ten     = 10,
-    will    = 11,
-    lady    = 12,
+    jack    = 11,
+    queen    = 12,
     king    = 13,
     ace     = 14,
     unknown = 99
@@ -35,6 +43,8 @@ QString suitToString(Suit suit);
 class Card : public QObject, public QGraphicsItem
 {
     Q_OBJECT
+    Q_PROPERTY(QRectF geometry READ geometry WRITE setGeometry)
+    Q_PROPERTY(QPointF pos READ pos WRITE setPos);
 public:
     Card(QObject *parent = nullptr);
     explicit Card(Denomination denomination, Suit suit, QObject *parent = nullptr);
@@ -49,9 +59,14 @@ public:
     QString getTextCard();
     int getCardScore();
     QPixmap getPixmap();
-
+    QRectF geometry() const;
+    void setGeometry(const QRectF &value);
     bool isExist();
-
+    void mousePressEvent (QGraphicsSceneMouseEvent *) override;
+    void mouseReleaseEvent (QGraphicsSceneMouseEvent *) override;
+    void mouseMoveEvent (QGraphicsSceneMouseEvent *) override;
+    void hoverEnterEvent(QGraphicsSceneHoverEvent *) override;
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent *) override;
     Card(const Card &card);
     Card &operator=(const Card&);
     friend QDebug operator<<(QDebug dbg, const Card &card) {
@@ -107,18 +122,31 @@ public:
         return dbg.space();
     }
 
+    QPointF pos() const;
+
+public slots:
+    void setPos(QPointF pos);
+    void setPos(float x, float y);
+
 signals:
-
+    void s_startHoverBLur();
 private slots:
-
+    void updatePen();
 private:
+
     Denomination currentDenomination_;
     Suit currentSuit_;
     QPixmap currentImage_;
-
     int width_ = 100;
     int height_ = 150;
-
+    bool change_{false};
+    bool mHover_{false};
+    QRectF rect_;
+    QPointF mStartMovePos_;
+    QTimer borderTimer_;
+    QGraphicsBlurEffect blur_;
+    void setBlurRadius(int);
+    QPointF m_pos;
 };
 
 #endif // CARD_H

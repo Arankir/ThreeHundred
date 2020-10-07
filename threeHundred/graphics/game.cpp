@@ -25,9 +25,11 @@ Game::Game(QList<Modes> aModes, QList<Player> aPlayers) : players_(aPlayers) {
     deck_.info();
     deck_.setPos(300,200);
 
-    Card *testCard = new Card(Denomination::will, Suit::spades);
-    testCard->setPos(10, 10);
-    testCard->setSize(QSize(50, 100));
+    Card *testCard = new Card(Denomination::jack, Suit::spades);
+    testCard->setAcceptHoverEvents(true);
+    testCard->setPos(400, 300);
+    testCard->setSize(QSize(100, 150));
+    //QPropertyAnimation ellipse_anim = new QPropertyAnimation(ellipse, "pos");
 
     this->addItem(&deck_);
     //this->addItem(&playingCards_);

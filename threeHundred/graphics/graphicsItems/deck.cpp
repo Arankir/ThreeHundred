@@ -26,6 +26,16 @@ void Deck::mouseReleaseEvent(QGraphicsSceneMouseEvent *aEvent) {
     qDebug() << "deck click" << aEvent->pos();
 }
 
+void Deck::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+{
+
+}
+
+void Deck::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+{
+
+}
+
 int Deck::getCount() {
     return deck_.count();
 }
@@ -41,7 +51,6 @@ Card Deck::takeCard() {
         return Card();
     }
 }
-
 void Deck::shuffleDeck() {
     for (int index = 0; index < 36; index++) {
         std::swap(deck_[index], deck_[std::rand() % 36]);

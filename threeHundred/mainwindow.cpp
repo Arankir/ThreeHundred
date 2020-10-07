@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+//#include "ui_mainwindow.h"
 
 
 MainWindow::MainWindow(int aWidth, int aHeight) {
@@ -20,6 +20,7 @@ MainWindow::MainWindow(int aWidth, int aHeight) {
     setSceneRect(0, 0, aWidth, aHeight);
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
     setFixedSize(aWidth, aHeight);
+
 
     this->game = new Game(listModes, players);
     setScene(game);

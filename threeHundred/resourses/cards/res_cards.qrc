@@ -5,52 +5,52 @@
         <file>clubs/five.png</file>
         <file>clubs/four.png</file>
         <file>clubs/king.png</file>
-        <file>clubs/lady.png</file>
+        <file>clubs/queen.png</file>
         <file>clubs/nine.png</file>
         <file>clubs/seven.png</file>
         <file>clubs/six.png</file>
         <file>clubs/ten.png</file>
         <file>clubs/three.png</file>
         <file>clubs/two.png</file>
-        <file>clubs/will.png</file>
+        <file>clubs/jack.png</file>
         <file>diamonds/ace.png</file>
         <file>diamonds/eight.png</file>
         <file>diamonds/five.png</file>
         <file>diamonds/four.png</file>
         <file>diamonds/king.png</file>
-        <file>diamonds/lady.png</file>
+        <file>diamonds/queen.png</file>
         <file>diamonds/nine.png</file>
         <file>diamonds/seven.png</file>
         <file>diamonds/six.png</file>
         <file>diamonds/ten.png</file>
         <file>diamonds/three.png</file>
         <file>diamonds/two.png</file>
-        <file>diamonds/will.png</file>
+        <file>diamonds/jack.png</file>
         <file>hearts/ace.png</file>
         <file>hearts/eight.png</file>
         <file>hearts/five.png</file>
         <file>hearts/four.png</file>
         <file>hearts/king.png</file>
-        <file>hearts/lady.png</file>
+        <file>hearts/queen.png</file>
         <file>hearts/nine.png</file>
         <file>hearts/seven.png</file>
         <file>hearts/six.png</file>
         <file>hearts/ten.png</file>
         <file>hearts/three.png</file>
         <file>hearts/two.png</file>
-        <file>hearts/will.png</file>
+        <file>hearts/jack.png</file>
         <file>spades/ace.png</file>
         <file>spades/eight.png</file>
         <file>spades/five.png</file>
         <file>spades/four.png</file>
         <file>spades/king.png</file>
-        <file>spades/lady.png</file>
+        <file>spades/queen.png</file>
         <file>spades/nine.png</file>
         <file>spades/seven.png</file>
         <file>spades/six.png</file>
         <file>spades/ten.png</file>
         <file>spades/three.png</file>
         <file>spades/two.png</file>
-        <file>spades/will.png</file>
+        <file>spades/jack.png</file>
     </qresource>
 </RCC>
